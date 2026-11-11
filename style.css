@@ -1,0 +1,104 @@
+
+/* GENERAL RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* WEBSITE BACKGROUND */
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(
+        135deg,
+        #777777,
+        #b5b5b5,
+        #777777
+    );
+    color: #222;
+}
+
+/* MAIN WEBSITE */
+
+#website {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 20px;
+}
+
+/* HEADER */
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+}
+
+header p {
+    margin-top: 10px;
+}
+
+/* WELCOME SECTION */
+
+#welcome {
+    max-width: 600px;
+    text-align: center;
+    padding: 30px;
+}
+
+#welcome h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#welcome p {
+    line-height: 1.6;
+}
+
+/* BUTTON */
+
+button {
+    margin-top: 25px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    background: #222;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background: #555;
+    transform: scale(1.05);
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.6rem;
+        letter-spacing: 3px;
+    }
+
+    #welcome h2 {
+        font-size: 1.6rem;
+    }
+}
