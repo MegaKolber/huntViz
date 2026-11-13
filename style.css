@@ -15,24 +15,24 @@
 :root {
   /* Pegboard — contents move and scale with this board */
   --board-left: 10%;        --board-top: 4%;          --board-width: 80%;
-  --name-left: 37%;         --name-top: 2%;           --name-width: 29%;
-  --shelf-left-x: 1%;       --shelf-left-bottom: 1%;  --shelf-left-width: 20%;
-  --shelf-right-x: 1%;      --shelf-right-bottom: 1%; --shelf-right-width: 26%;
-  --card-left: 40%;         --card-top: 22%;          --card-width: 12%;
-  --plant-left: 76%;        --plant-top: 52%;         --plant-width: 9%;
-  --camera-left: 13%;       --camera-top: 70%;        --camera-width: 7%;
-  --tools-left: 22%;        --tools-top: 26%;         --tools-width: 58%;
+  --name-left: 25%;         --name-top: 4%;           --name-width: 55%;
+  --shelf-left-x: 3%;       --shelf-left-bottom: 55%;  --shelf-left-width: 20%;
+  --shelf-right-x: 1%;      --shelf-right-bottom: 10%; --shelf-right-width: 26%;
+  --card-left: 83%;         --card-top: 16%;          --card-width: 12%;
+  --plant-left: 73%;        --plant-top: 50%;         --plant-width: 9%;
+  --camera-left: 11%;       --camera-top: 16%;        --camera-width: 10%;
+  --tools-left: 30%;        --tools-top: 33%;         --tools-width: 44%;
   --tools-height: 70%;
 
   /* Desk — these percentages refer to the entire game scene */
-  --drawers-left: 5%;       --drawers-bottom: 1%;     --drawers-width: 90%;
-  --desktop-left: 4%;       --desktop-bottom: 22%;    --desktop-width: 92%;
-  --desk-shelf-left: 35%;   --desk-shelf-bottom: 3%;  --desk-shelf-width: 30%;
-  --book-left: 39%;         --book-top: 63%;          --book-width: 18%;
+  --drawers-left: 10%;       --drawers-bottom: 0%;     --drawers-width: 80%;
+  --desktop-left: 4%;       --desktop-bottom: 16%;    --desktop-width: 92%;
+  --desk-shelf-left: 31%;   --desk-shelf-bottom: 2%;  --desk-shelf-width: 36%;
+  --book-left: 31%;         --book-top: 68%;          --book-width: 18%;
   /* Pen is positioned relative to the BOOK, not the scene */
-  --pen-left: 42%;          --pen-top: -5%;           --pen-width: 38%;
-  --lamp-left: 12%;         --lamp-top: 48%;          --lamp-width: 19%;
-  --joystick-right: 12%;    --joystick-top: 57%;      --joystick-width: 20%;
+  --pen-left: 12%;          --pen-top: -5%;           --pen-width: 100%;
+  --lamp-left: 9.5%;         --lamp-top: 36%;          --lamp-width: 19%;
+  --joystick-right: 15%;    --joystick-top: 55%;      --joystick-width: 15%;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
