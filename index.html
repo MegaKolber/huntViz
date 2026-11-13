@@ -1,64 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kolby Hunt — Creative Technologist. Interactive experiences, creative technology, and things that make you look twice.">
-    <meta name="theme-color" content="#101a1c">
-    <title>Hunt Your Vizion | Kolby Hunt</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kolby Hunt — Creative Technologist. Interactive experiences, creative technology, and things that make you look twice.">
+  <meta name="theme-color" content="#101a1c">
+  <title>Hunt Your Vizion | Kolby Hunt</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <main id="website">
-        <header class="site-header">
-            <h1>HUNT YOUR VIZION</h1>
-            <p>Creative Technologist <span aria-hidden="true">|</span> Kolby Hunt</p>
-        </header>
+  <main id="website">
+    <header class="site-header">
+      <h1>HUNT YOUR VIZION</h1>
+      <p>Creative Technologist <span aria-hidden="true">|</span> Kolby Hunt</p>
+    </header>
 
-        <section class="game-screen" id="gameScreen" aria-label="Interactive portfolio">
-            <div class="intro" id="intro">
-                <button class="explore-button" id="exploreButton" type="button">
-                    <span>EXPLORE</span>
-                    <span class="button-hint">CLICK TO ENTER</span>
-                </button>
+    <section class="game-screen" id="gameScreen" aria-label="Interactive portfolio">
+      <div class="intro" id="intro">
+        <button class="explore-button" id="exploreButton" type="button">
+          <span>EXPLORE</span><span class="button-hint">CLICK TO ENTER</span>
+        </button>
+      </div>
+
+      <div class="world" id="world" aria-label="A small interactive workspace">
+        <div class="wall">
+          <div class="wall-panel wall-panel-left"></div>
+          <div class="wall-panel wall-panel-right"></div>
+        </div>
+
+        <div class="scene">
+          <!-- The board enters alone; its contents are staged separately afterward. -->
+          <div class="board-assembly" id="boardAssembly">
+            <img class="board-base" src="assets/board.png" alt="">
+            <img class="board-name board-detail" src="assets/name.png" alt="">
+            <img class="board-shelf board-shelf-left board-detail" src="assets/shelfLeft02.png" alt="">
+            <img class="board-shelf board-shelf-right board-detail" src="assets/shekfEmpR.png" alt="">
+            <img class="board-business-card board-detail" src="assets/bc.png" alt="">
+            <div class="tool-line board-detail" aria-hidden="true">
+              <img src="assets/t1.png" alt="">
+              <img src="assets/t2.png" alt="">
+              <img src="assets/t3.png" alt="">
+              <img src="assets/t4.png" alt="">
+              <img src="assets/t8.png" alt="">
+              <img src="assets/t91.png" alt="">
+              <img src="assets/t92.png" alt="">
+              <img src="assets/t93.png" alt="">
             </div>
+          </div>
 
-            <div class="world" id="world" aria-label="A small interactive workspace">
-                <div class="wall">
-                    <div class="wall-panel wall-panel-left"></div>
-                    <div class="wall-panel wall-panel-right"></div>
-                </div>
+          <div class="desk-assembly" id="deskAssembly">
+            <img class="drawers" src="assets/drawers.png" alt="">
+            <img class="desktop" src="assets/desktop.png" alt="">
+            <img class="desk-shelf" src="assets/shelf02.png" alt="">
 
-                <div class="scene">
-                    <button class="scene-object bulletin-board" data-hover-text="FILMS" type="button" aria-label="Films">
-                        <span class="board-pins"></span>
-                    </button>
+            <button class="scene-object book-object" data-hover-text="INTERACTIVES" type="button" aria-label="Interactive projects">
+              <img src="assets/book.png" alt="">
+              <img class="pen" src="assets/pen.png" alt="">
+            </button>
 
-                    <button class="scene-object book" data-hover-text="INTERACTIVES" type="button" aria-label="Interactive projects">
-                        <span class="book-cover"></span>
-                    </button>
+            <!-- All lamp layers share one canvas and one parent. They never enter separately. -->
+            <button class="scene-object lamp-object" data-hover-text="A LITTLE MORE THAN A LAMP" type="button" aria-label="Lamp — hover to see how it is built">
+              <span class="lamp-stack">
+                <img src="assets/lamp1.png" alt="">
+                <img src="assets/lamp2.png" alt="">
+                <img src="assets/lamp3.png" alt="">
+                <img src="assets/lamp4.png" alt="">
+              </span>
+            </button>
 
-                    <button class="scene-object lamp" type="button" aria-label="Decorative lamp">
-                        <span class="lamp-shade"></span>
-                        <span class="lamp-stem"></span>
-                        <span class="lamp-base"></span>
-                    </button>
+            <!-- The joystick pieces stay locked together; hover shifts the assembled layers. -->
+            <button class="scene-object joystick-object" data-hover-text="FABRICATIONS" type="button" aria-label="Joystick — hover to see how it is built">
+              <span class="joystick-stack">
+                <img class="joystick-base" src="assets/stickBase2.png" alt="">
+                <img class="joystick-part joystick-part-one" src="assets/stick1.png" alt="">
+                <img class="joystick-part joystick-part-two" src="assets/stick2.png" alt="">
+                <img class="joystick-part joystick-part-three" src="assets/stick3.png" alt="">
+                <img class="joystick-top" src="assets/stick.png" alt="">
+              </span>
+            </button>
+          </div>
+        </div>
 
-                    <button class="scene-object drawer" data-hover-text="FABRICATIONS" type="button" aria-label="Fabrications">
-                        <span class="drawer-handle"></span>
-                    </button>
+        <div class="hover-text" id="hoverText" aria-live="polite"></div>
+      </div>
+    </section>
 
-                    <div class="desk-top" aria-hidden="true"></div>
-                </div>
-
-                <div class="hover-text" id="hoverText" aria-live="polite"></div>
-            </div>
-        </section>
-
-        <footer class="site-footer">
-            <p>© 2026 Kolby Hunt</p>
-        </footer>
-    </main>
+    <footer class="site-footer"><p>© 2026 Kolby Hunt</p></footer>
+  </main>
 </body>
 </html>
