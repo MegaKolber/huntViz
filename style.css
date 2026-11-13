@@ -43,34 +43,34 @@ body { background: var(--background); color: var(--cyan); font-family: "Trebuche
 .world.is-opening .wall-panel-right { transform: translateX(101%); }
 .scene { position: absolute; inset: 0; }
 .scene img { display: block; user-select: none; -webkit-user-drag: none; pointer-events: none; }
-.board-assembly { position: absolute; z-index: 3; top: 5%; left: 8%; width: 84%; opacity: 0; transform: translateX(-125%); }
+.board-assembly { position: absolute; z-index: 3; top: 4%; left: 10%; width: 80%; opacity: 0; transform: translateX(-110%); }
 .board-base { width: 100%; height: auto; }
 .board-detail { position: absolute; opacity: 0; }
-.board-name { top: 3%; left: 37%; width: 35%; transform: translateY(-45px); }
+.board-name { top: 2%; left: 37%; width: 29%; transform: translateY(-25%); }
 .board-shelf { bottom: 1%; height: auto; }
-.board-shelf-left { left: 1%; width: 20%; transform: translateX(-90px); }
-.board-shelf-right { right: 1%; width: 26%; transform: translateX(90px); }
-.board-business-card { top: 25%; left: 42%; width: 13%; transform: translateY(-50px) rotate(-8deg); }
-.board-plant { top: 61%; left: 75%; width: 8%; transform: translateY(-45px); }
-.camera-object { top: 78%; left: 13%; width: 6%; padding: 0; border: 0; background: transparent; cursor: pointer; pointer-events: none; }
+.board-shelf-left { left: 1%; width: 20%; transform: translateX(-100%); }
+.board-shelf-right { right: 1%; width: 26%; transform: translateX(100%); }
+.board-business-card { top: 22%; left: 40%; width: 12%; transform: translateY(-80%); }
+.board-plant { top: 52%; left: 76%; width: 9%; transform: translateY(-80%); }
+.camera-object { top: 70%; left: 13%; width: 7%; padding: 0; border: 0; background: transparent; cursor: pointer; pointer-events: none; }
 .world.is-complete .camera-object { pointer-events: auto; }
 .camera-object img { position: absolute; inset: 0; width: 100%; height: auto; transition: opacity 180ms ease; }
 .camera-object .camera-end { opacity: 0; }
 .camera-object:hover .camera-start, .camera-object:focus-visible .camera-start { opacity: 0; }
 .camera-object:hover .camera-end, .camera-object:focus-visible .camera-end { opacity: 1; }
-.tool-line { left: 26%; top: 28%; width: 49%; height: 68%; display: flex; align-items: center; justify-content: space-between; gap: .2%; transform: translateY(-45px); }
-.tool-line img { width: 12.3%; max-height: 100%; height: auto; object-fit: contain; }
+.tool-line { left: 22%; top: 26%; width: 58%; height: 70%; transform: translateY(-25%); }
+.tool-line img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
 .desk-assembly { position: absolute; z-index: 5; inset: 0; opacity: 0; pointer-events: none; }
-.drawers { position: absolute; left: 1%; bottom: 1%; width: 98%; height: auto; transform: translateY(120%); }
-.desktop { position: absolute; left: 0; bottom: 23%; width: 100%; height: auto; transform: translateY(-160%); }
-.desk-shelf { position: absolute; left: 36%; bottom: 3%; width: 28%; height: auto; opacity: 0; transform: translateY(35px); }
+.drawers { position: absolute; left: 2%; bottom: 1%; width: 96%; height: auto; transform: translateY(110%); }
+.desktop { position: absolute; left: 0; bottom: 22%; width: 100%; height: auto; transform: translateY(-250%); }
+.desk-shelf { position: absolute; left: 35%; bottom: 3%; width: 30%; height: auto; opacity: 0; transform: translateY(35%); }
 .scene-object { position: absolute; display: block; padding: 0; border: 0; background: transparent; cursor: pointer; pointer-events: none; opacity: 0; }
 .world.is-complete .scene-object { pointer-events: auto; }
 .scene-object:focus-visible { outline: 1px solid rgba(197,223,218,.8); outline-offset: 4px; }
-.book-object { left: 39%; top: 54%; width: 20%; transform: translateY(-180px) rotate(-9deg); }
+.book-object { left: 39%; top: 63%; width: 18%; transform: translateY(-180%) rotate(-9deg); }
 .book-object > img:first-child { width: 100%; height: auto; }
 .book-object .pen { position: absolute; width: 38%; height: auto; left: 42%; top: -5%; transform: rotate(-5deg); }
-.lamp-object { left: 13%; top: 40%; width: 20%; aspect-ratio: 318 / 352; transform: translateX(-180px); }
+.lamp-object { left: 12%; top: 48%; width: 19%; aspect-ratio: 318 / 352; transform: translateX(-110%); }
 .lamp-stack, .joystick-stack { position: absolute; inset: 0; display: block; }
 .lamp-stack img, .joystick-stack img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
 .lamp-stack img:nth-child(2) { transform-origin: 29% 55%; }
@@ -80,7 +80,7 @@ body { background: var(--background); color: var(--cyan); font-family: "Trebuche
 .lamp-object:hover .lamp-stack img:nth-child(3), .lamp-object:focus-visible .lamp-stack img:nth-child(3) { transform: rotate(10deg) translate(2px,-2px); }
 .lamp-object:hover .lamp-stack img:nth-child(4), .lamp-object:focus-visible .lamp-stack img:nth-child(4) { transform: rotate(-13deg) translate(3px,-3px); }
 .lamp-stack img { transition: transform 450ms cubic-bezier(.2,.8,.2,1); }
-.joystick-object { right: 12%; top: 48%; width: 22%; aspect-ratio: 1 / 1; transform: translate(180px,50px); }
+.joystick-object { right: 12%; top: 57%; width: 20%; aspect-ratio: 1 / 1; transform: translate(110%,12%); }
 .joystick-stack img { transition: transform 350ms ease; }
 .joystick-object:hover .joystick-part-one, .joystick-object:focus-visible .joystick-part-one { transform: translate(-4px,-3px) rotate(-2deg); }
 .joystick-object:hover .joystick-part-two, .joystick-object:focus-visible .joystick-part-two { transform: translate(3px,-2px) rotate(2deg); }
@@ -98,19 +98,19 @@ body { background: var(--background); color: var(--cyan); font-family: "Trebuche
 /* Assembly choreography: each board detail waits for the empty board to land. */
 .world.is-assembling .board-assembly { animation: board-arrives 950ms cubic-bezier(.2,.75,.25,1) forwards; }
 .world.is-assembling .board-name { animation: detail-drop 550ms ease 1.15s forwards; }
-.world.is-assembling .board-shelf-left { animation: detail-left 650ms cubic-bezier(.2,.75,.25,1) 1.4s forwards; }
-.world.is-assembling .board-shelf-right { animation: detail-right 650ms cubic-bezier(.2,.75,.25,1) 1.65s forwards; }
-.world.is-assembling .board-business-card { animation: detail-drop 550ms ease 1.9s forwards; }
-.world.is-assembling .board-plant { animation: detail-drop 550ms ease 1.8s forwards; }
-.world.is-assembling .camera-object { animation: detail-drop 550ms ease 2s forwards; }
-.world.is-assembling .tool-line { animation: detail-drop 650ms ease 2.15s forwards; }
+.world.is-assembling .board-shelf-left { animation: detail-left 650ms cubic-bezier(.2,.75,.25,1) 1.65s forwards; }
+.world.is-assembling .board-shelf-right { animation: detail-right 650ms cubic-bezier(.2,.75,.25,1) 1.95s forwards; }
+.world.is-assembling .board-business-card { animation: detail-drop 550ms ease 2.25s forwards; }
+.world.is-assembling .board-plant { animation: detail-drop 550ms ease 2.5s forwards; }
+.world.is-assembling .camera-object { animation: detail-drop 550ms ease 2.75s forwards; }
+.world.is-assembling .tool-line { animation: detail-drop 650ms ease 3s forwards; }
 .world.is-assembling .desk-assembly { opacity: 1; }
-.world.is-assembling .drawers { animation: drawer-rise 850ms cubic-bezier(.2,.8,.2,1) 1.05s forwards; }
-.world.is-assembling .desktop { animation: desktop-drop 750ms cubic-bezier(.2,.8,.2,1) 1.75s forwards; }
-.world.is-assembling .desk-shelf { animation: detail-drop 550ms ease 2.3s forwards; }
-.world.is-assembling .book-object { animation: book-drop 750ms cubic-bezier(.2,.8,.2,1) 2.35s forwards; }
-.world.is-assembling .lamp-object { animation: lamp-slide 850ms cubic-bezier(.2,.75,.25,1) 2.5s forwards; }
-.world.is-assembling .joystick-object { animation: stick-arrive 850ms cubic-bezier(.2,.75,.25,1) 2.85s forwards; }
+.world.is-assembling .drawers { animation: drawer-rise 850ms cubic-bezier(.2,.8,.2,1) 3.9s forwards; }
+.world.is-assembling .desktop { animation: desktop-drop 750ms cubic-bezier(.2,.8,.2,1) 4.8s forwards; }
+.world.is-assembling .desk-shelf { animation: detail-drop 550ms ease 5.35s forwards; }
+.world.is-assembling .book-object { animation: book-drop 750ms cubic-bezier(.2,.8,.2,1) 5.55s forwards; }
+.world.is-assembling .lamp-object { animation: lamp-slide 850ms cubic-bezier(.2,.75,.25,1) 5.9s forwards; }
+.world.is-assembling .joystick-object { animation: stick-arrive 850ms cubic-bezier(.2,.75,.25,1) 6.25s forwards; }
 
 @keyframes board-arrives { to { opacity: 1; transform: translateX(0); } }
 @keyframes detail-drop { to { opacity: 1; transform: translate(0,0) rotate(0); } }
@@ -118,24 +118,24 @@ body { background: var(--background); color: var(--cyan); font-family: "Trebuche
 @keyframes detail-right { to { opacity: 1; transform: translateX(0); } }
 @keyframes drawer-rise { to { transform: translateY(0); } }
 @keyframes desktop-drop { 0% { transform: translateY(-160%); } 80% { transform: translateY(5%); } 100% { transform: translateY(0); } }
-@keyframes book-drop { 0% { opacity: 1; transform: translateY(-180px) rotate(-9deg); } 80% { transform: translateY(7px) rotate(2deg); } 100% { opacity: 1; transform: translateY(0) rotate(0); } }
+@keyframes book-drop { 0% { opacity: 1; transform: translateY(-180%) rotate(-9deg); } 80% { transform: translateY(7%) rotate(2deg); } 100% { opacity: 1; transform: translateY(0) rotate(0); } }
 @keyframes lamp-slide { to { opacity: 1; transform: translateX(0); } }
 @keyframes stick-arrive { to { opacity: 1; transform: translate(0,0); } }
 
 @media (max-width: 700px) {
   #website { padding: 22px 14px 12px; gap: 12px; }
-  .game-screen { width: min(100%, calc((100dvh - 145px) * .8)); aspect-ratio: 4 / 5; }
-  .board-assembly { top: 9%; left: 4%; width: 92%; }
-  .board-name { top: 3%; left: 34%; width: 40%; }
-  .board-shelf-left { width: 22%; }
-  .board-shelf-right { width: 28%; }
-  .tool-line { left: 24%; top: 27%; width: 52%; height: 67%; }
-  .desktop { bottom: 24%; }
-  .drawers { width: 110%; left: -5%; bottom: 2%; }
-  .desk-shelf { left: 34%; width: 32%; }
-  .book-object { left: 34%; top: 54%; width: 28%; }
-  .lamp-object { left: 4%; top: 42%; width: 26%; }
-  .joystick-object { right: 3%; top: 49%; width: 28%; }
+  .game-screen { width: min(100%, calc((100dvh - 145px) * 1.7778)); aspect-ratio: 16 / 9; }
+  .board-assembly { top: 4%; left: 10%; width: 80%; }
+  .board-name { top: 2%; left: 37%; width: 29%; }
+  .board-shelf-left { width: 20%; }
+  .board-shelf-right { width: 26%; }
+  .tool-line { left: 22%; top: 26%; width: 58%; height: 70%; }
+  .desktop { bottom: 22%; }
+  .drawers { width: 96%; left: 2%; bottom: 1%; }
+  .desk-shelf { left: 35%; width: 30%; }
+  .book-object { left: 39%; top: 63%; width: 18%; }
+  .lamp-object { left: 12%; top: 48%; width: 19%; }
+  .joystick-object { right: 12%; top: 57%; width: 20%; }
   .hover-text { bottom: 3%; }
 }
 @media (max-height: 620px) and (min-width: 701px) {
