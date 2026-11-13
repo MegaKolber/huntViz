@@ -133,7 +133,7 @@ body {
     inset: 0;
     overflow: hidden;
     opacity: 0;
-    background: var(--background);
+    background: var(--screen);
     transition: opacity 700ms ease 250ms;
 }
 
@@ -145,7 +145,7 @@ body {
     position: absolute;
     inset: 0;
     overflow: hidden;
-    background: var(--background);
+    background: var(--screen);
 }
 
 .wall-panel {
