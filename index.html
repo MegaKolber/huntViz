@@ -1,36 +1,73 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kolby Hunt - Creative Technologist">
-    <title>Kolby Hunt | Hunt Your Vizion</title>
-
+    <meta name="description" content="Kolby Hunt — Creative Technologist. Interactive experiences, creative technology, and things that make you look twice.">
+    <meta name="theme-color" content="#101a1c">
+    <title>Hunt Your Vizion | Kolby Hunt</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
-
 <body>
-
     <main id="website">
-
-        <header>
+        <header class="site-header">
             <h1>HUNT YOUR VIZION</h1>
-            <p>Creative Technologist | Kolby Hunt</p>
+            <p>Creative Technologist <span aria-hidden="true">|</span> Kolby Hunt</p>
         </header>
 
-        <section id="welcome">
-            <h2>Welcome to my world.</h2>
-            <p>I'm Kolby. I create interactive experiences, creative technologies, and things that make you look twice.</p>
-            <button id="exploreButton">Explore</button>
+        <section class="game-screen" id="gameScreen" aria-label="Interactive portfolio">
+            <div class="intro" id="intro">
+                <button class="explore-button" id="exploreButton" type="button">
+                    <span>EXPLORE</span>
+                    <span class="button-hint">CLICK TO ENTER</span>
+                </button>
+            </div>
+
+            <div class="world" id="world" aria-label="A small interactive workspace">
+                <div class="wall">
+                    <div class="wall-panel wall-panel-left"></div>
+                    <div class="wall-panel wall-panel-right"></div>
+                </div>
+
+                <div class="scene">
+                    <button class="scene-object bulletin-board" data-title="FILMS" data-description="Stories told through moving images." type="button" aria-label="Explore films">
+                        <span class="board-pins"></span>
+                        <span class="object-label">FILMS</span>
+                    </button>
+
+                    <button class="scene-object book" data-title="INTERACTIVES" data-description="Experiments, digital worlds, and playful ways to interact." type="button" aria-label="Explore interactive projects">
+                        <span class="book-cover"></span>
+                        <span class="object-label">INTERACTIVES</span>
+                    </button>
+
+                    <button class="scene-object lamp" data-title="ABOUT" data-description="A little about the person building all of this." type="button" aria-label="About Kolby">
+                        <span class="lamp-shade"></span>
+                        <span class="lamp-stem"></span>
+                        <span class="lamp-base"></span>
+                        <span class="object-label">ABOUT</span>
+                    </button>
+
+                    <button class="scene-object drawer" data-title="FABRICATIONS" data-description="Physical builds, prototypes, and things made by hand." type="button" aria-label="Explore fabrications">
+                        <span class="drawer-handle"></span>
+                        <span class="object-label">FABRICATIONS</span>
+                    </button>
+
+                    <div class="desk-top" aria-hidden="true"></div>
+                </div>
+
+                <div class="detail-panel" id="detailPanel" aria-live="polite" hidden>
+                    <button class="detail-close" id="detailClose" type="button" aria-label="Close detail">×</button>
+                    <h2 id="detailTitle"></h2>
+                    <p id="detailDescription"></p>
+                    <span class="detail-coming-soon">PROJECTS COMING INTO FOCUS</span>
+                </div>
+            </div>
         </section>
 
-        <footer>
+        <footer class="site-footer">
             <p>© 2026 Kolby Hunt</p>
         </footer>
-
     </main>
-
-    <script src="script.js"></script>
 </body>
 </html>
