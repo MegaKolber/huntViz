@@ -61,8 +61,8 @@ body { background: var(--background); color: var(--cyan); font-family: "Trebuche
 .tool-line { left: 22%; top: 26%; width: 58%; height: 70%; transform: translateY(-25%); }
 .tool-line img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
 .desk-assembly { position: absolute; z-index: 5; inset: 0; opacity: 0; pointer-events: none; }
-.drawers { position: absolute; left: 2%; bottom: 1%; width: 96%; height: auto; transform: translateY(110%); }
-.desktop { position: absolute; left: 0; bottom: 22%; width: 100%; height: auto; transform: translateY(-250%); }
+.drawers { position: absolute; left: 5%; bottom: 1%; width: 90%; height: auto; transform: translateY(110%); }
+.desktop { position: absolute; left: 4%; bottom: 22%; width: 92%; height: auto; opacity: 0; transform: translateY(-250%); }
 .desk-shelf { position: absolute; left: 35%; bottom: 3%; width: 30%; height: auto; opacity: 0; transform: translateY(35%); }
 .scene-object { position: absolute; display: block; padding: 0; border: 0; background: transparent; cursor: pointer; pointer-events: none; opacity: 0; }
 .world.is-complete .scene-object { pointer-events: auto; }
@@ -117,7 +117,7 @@ body { background: var(--background); color: var(--cyan); font-family: "Trebuche
 @keyframes detail-left { to { opacity: 1; transform: translateX(0); } }
 @keyframes detail-right { to { opacity: 1; transform: translateX(0); } }
 @keyframes drawer-rise { to { transform: translateY(0); } }
-@keyframes desktop-drop { 0% { transform: translateY(-160%); } 80% { transform: translateY(5%); } 100% { transform: translateY(0); } }
+@keyframes desktop-drop { 0% { opacity: 0; transform: translateY(-250%); } 10% { opacity: 1; } 80% { opacity: 1; transform: translateY(5%); } 100% { opacity: 1; transform: translateY(0); } }
 @keyframes book-drop { 0% { opacity: 1; transform: translateY(-180%) rotate(-9deg); } 80% { transform: translateY(7%) rotate(2deg); } 100% { opacity: 1; transform: translateY(0) rotate(0); } }
 @keyframes lamp-slide { to { opacity: 1; transform: translateX(0); } }
 @keyframes stick-arrive { to { opacity: 1; transform: translate(0,0); } }
@@ -130,8 +130,8 @@ body { background: var(--background); color: var(--cyan); font-family: "Trebuche
   .board-shelf-left { width: 20%; }
   .board-shelf-right { width: 26%; }
   .tool-line { left: 22%; top: 26%; width: 58%; height: 70%; }
-  .desktop { bottom: 22%; }
-  .drawers { width: 96%; left: 2%; bottom: 1%; }
+  .desktop { bottom: 22%; left: 4%; width: 92%; }
+  .drawers { width: 90%; left: 5%; bottom: 1%; }
   .desk-shelf { left: 35%; width: 30%; }
   .book-object { left: 39%; top: 63%; width: 18%; }
   .lamp-object { left: 12%; top: 48%; width: 19%; }
