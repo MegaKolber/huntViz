@@ -52,7 +52,8 @@ body { background: var(--background); color: var(--cyan); font-family: "Trebuche
 .board-shelf-right { right: 1%; width: 26%; transform: translateX(90px); }
 .board-business-card { top: 25%; left: 42%; width: 13%; transform: translateY(-50px) rotate(-8deg); }
 .board-plant { top: 61%; left: 75%; width: 8%; transform: translateY(-45px); }
-.camera-object { top: 78%; left: 13%; width: 6%; padding: 0; border: 0; background: transparent; cursor: pointer; }
+.camera-object { top: 78%; left: 13%; width: 6%; padding: 0; border: 0; background: transparent; cursor: pointer; pointer-events: none; }
+.world.is-complete .camera-object { pointer-events: auto; }
 .camera-object img { position: absolute; inset: 0; width: 100%; height: auto; transition: opacity 180ms ease; }
 .camera-object .camera-end { opacity: 0; }
 .camera-object:hover .camera-start, .camera-object:focus-visible .camera-start { opacity: 0; }
