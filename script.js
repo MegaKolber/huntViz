@@ -1,50 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const exploreButton = document.getElementById("exploreButton");
-    const intro = document.getElementById("intro");
-    const world = document.getElementById("world");
-    const hoverText = document.getElementById("hoverText");
-    const hoverObjects = document.querySelectorAll("[data-hover-text]");
+  const exploreButton = document.getElementById("exploreButton");
+  const intro = document.getElementById("intro");
+  const world = document.getElementById("world");
+  const hoverText = document.getElementById("hoverText");
+  const hoverObjects = document.querySelectorAll("[data-hover-text]");
+  let hasEntered = false;
 
-    let hasEntered = false;
+  exploreButton.addEventListener("click", () => {
+    if (hasEntered) return;
+    hasEntered = true;
+    intro.classList.add("is-leaving");
 
-    exploreButton.addEventListener("click", () => {
-        if (hasEntered) return;
-        hasEntered = true;
+    // Doors open first. The desk and board do not begin assembling until they clear.
+    window.setTimeout(() => world.classList.add("is-opening"), 350);
+    window.setTimeout(() => world.classList.add("is-assembling"), 1950);
+    window.setTimeout(() => world.classList.add("is-complete"), 5900);
+  });
 
-        intro.classList.add("is-leaving");
-        world.classList.add("is-visible");
+  hoverObjects.forEach((object) => {
+    const showCaption = () => {
+      hoverText.textContent = object.dataset.hoverText;
+      hoverText.classList.add("is-visible");
+    };
+    const hideCaption = () => hoverText.classList.remove("is-visible");
 
-        // Fade the invitation, then open the two wall panels.
-        window.setTimeout(() => {
-            world.classList.add("is-opening");
-        }, 350);
-
-        // Let the green doors finish opening before the workspace assembles.
-        window.setTimeout(() => {
-            world.classList.add("is-assembling");
-        }, 2050);
-
-        // Mark the scene ready once the objects have settled.
-        window.setTimeout(() => {
-            world.classList.add("is-ready");
-        }, 4700);
-    });
-
-    // Only objects with data-hover-text display a caption.
-    // The caption appears in the game's bottom text area, never on the object.
-    hoverObjects.forEach((object) => {
-        const showCaption = () => {
-            hoverText.textContent = object.dataset.hoverText;
-            hoverText.classList.add("is-visible");
-        };
-
-        const hideCaption = () => {
-            hoverText.classList.remove("is-visible");
-        };
-
-        object.addEventListener("mouseenter", showCaption);
-        object.addEventListener("mouseleave", hideCaption);
-        object.addEventListener("focus", showCaption);
-        object.addEventListener("blur", hideCaption);
-    });
+    object.addEventListener("pointerenter", showCaption);
+    object.addEventListener("pointerleave", hideCaption);
+    object.addEventListener("focus", showCaption);
+    object.addEventListener("blur", hideCaption);
+  });
 });
