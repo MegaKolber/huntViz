@@ -5,6 +5,36 @@
   --cyan: #c5dfda;
   --cyan-muted: #91b2ad;
 }
+/* ============================================================
+   SCENE POSITION CONTROLS — EDIT HERE FIRST
+   All positions and sizes are percentages of their parent.
+   left/top: move from left/top; bottom/right: move from opposite edge.
+   width: change size. 1% is NOT one pixel; it scales with the scene.
+   Keep the animation rules farther down unchanged.
+   ============================================================ */
+:root {
+  /* Pegboard — contents move and scale with this board */
+  --board-left: 10%;        --board-top: 4%;          --board-width: 80%;
+  --name-left: 37%;         --name-top: 2%;           --name-width: 29%;
+  --shelf-left-x: 1%;       --shelf-left-bottom: 1%;  --shelf-left-width: 20%;
+  --shelf-right-x: 1%;      --shelf-right-bottom: 1%; --shelf-right-width: 26%;
+  --card-left: 40%;         --card-top: 22%;          --card-width: 12%;
+  --plant-left: 76%;        --plant-top: 52%;         --plant-width: 9%;
+  --camera-left: 13%;       --camera-top: 70%;        --camera-width: 7%;
+  --tools-left: 22%;        --tools-top: 26%;         --tools-width: 58%;
+  --tools-height: 70%;
+
+  /* Desk — these percentages refer to the entire game scene */
+  --drawers-left: 5%;       --drawers-bottom: 1%;     --drawers-width: 90%;
+  --desktop-left: 4%;       --desktop-bottom: 22%;    --desktop-width: 92%;
+  --desk-shelf-left: 35%;   --desk-shelf-bottom: 3%;  --desk-shelf-width: 30%;
+  --book-left: 39%;         --book-top: 63%;          --book-width: 18%;
+  /* Pen is positioned relative to the BOOK, not the scene */
+  --pen-left: 42%;          --pen-top: -5%;           --pen-width: 38%;
+  --lamp-left: 12%;         --lamp-top: 48%;          --lamp-width: 19%;
+  --joystick-right: 12%;    --joystick-top: 57%;      --joystick-width: 20%;
+}
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { width: 100%; height: 100%; overflow: hidden; }
 body { background: var(--background); color: var(--cyan); font-family: "Trebuchet MS", Arial, sans-serif; }
@@ -43,34 +73,34 @@ body { background: var(--background); color: var(--cyan); font-family: "Trebuche
 .world.is-opening .wall-panel-right { transform: translateX(101%); }
 .scene { position: absolute; inset: 0; }
 .scene img { display: block; user-select: none; -webkit-user-drag: none; pointer-events: none; }
-.board-assembly { position: absolute; z-index: 3; top: 4%; left: 10%; width: 80%; opacity: 0; transform: translateX(-110%); }
+.board-assembly { position: absolute; z-index: 3; top: var(--board-top); left: var(--board-left); width: var(--board-width); opacity: 0; transform: translateX(-110%); }
 .board-base { width: 100%; height: auto; }
 .board-detail { position: absolute; opacity: 0; }
-.board-name { top: 2%; left: 37%; width: 29%; transform: translateY(-25%); }
+.board-name { top: var(--name-top); left: var(--name-left); width: var(--name-width); transform: translateY(-25%); }
 .board-shelf { bottom: 1%; height: auto; }
-.board-shelf-left { left: 1%; width: 20%; transform: translateX(-100%); }
-.board-shelf-right { right: 1%; width: 26%; transform: translateX(100%); }
-.board-business-card { top: 22%; left: 40%; width: 12%; transform: translateY(-80%); }
-.board-plant { top: 52%; left: 76%; width: 9%; transform: translateY(-80%); }
-.camera-object { top: 70%; left: 13%; width: 7%; padding: 0; border: 0; background: transparent; cursor: pointer; pointer-events: none; }
+.board-shelf-left { left: var(--shelf-left-x); bottom: var(--shelf-left-bottom); width: var(--shelf-left-width); transform: translateX(-100%); }
+.board-shelf-right { right: var(--shelf-right-x); bottom: var(--shelf-right-bottom); width: var(--shelf-right-width); transform: translateX(100%); }
+.board-business-card { top: var(--card-top); left: var(--card-left); width: var(--card-width); transform: translateY(-80%); }
+.board-plant { top: var(--plant-top); left: var(--plant-left); width: var(--plant-width); transform: translateY(-80%); }
+.camera-object { top: var(--camera-top); left: var(--camera-left); width: var(--camera-width); padding: 0; border: 0; background: transparent; cursor: pointer; pointer-events: none; }
 .world.is-complete .camera-object { pointer-events: auto; }
 .camera-object img { position: absolute; inset: 0; width: 100%; height: auto; transition: opacity 180ms ease; }
 .camera-object .camera-end { opacity: 0; }
 .camera-object:hover .camera-start, .camera-object:focus-visible .camera-start { opacity: 0; }
 .camera-object:hover .camera-end, .camera-object:focus-visible .camera-end { opacity: 1; }
-.tool-line { left: 22%; top: 26%; width: 58%; height: 70%; transform: translateY(-25%); }
+.tool-line { left: var(--tools-left); top: var(--tools-top); width: var(--tools-width); height: var(--tools-height); transform: translateY(-25%); }
 .tool-line img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
 .desk-assembly { position: absolute; z-index: 5; inset: 0; opacity: 0; pointer-events: none; }
-.drawers { position: absolute; left: 5%; bottom: 1%; width: 90%; height: auto; transform: translateY(110%); }
-.desktop { position: absolute; left: 4%; bottom: 22%; width: 92%; height: auto; opacity: 0; transform: translateY(-250%); }
-.desk-shelf { position: absolute; left: 35%; bottom: 3%; width: 30%; height: auto; opacity: 0; transform: translateY(35%); }
+.drawers { position: absolute; left: var(--drawers-left); bottom: var(--drawers-bottom); width: var(--drawers-width); height: auto; transform: translateY(110%); }
+.desktop { position: absolute; left: var(--desktop-left); bottom: var(--desktop-bottom); width: var(--desktop-width); height: auto; opacity: 0; transform: translateY(-250%); }
+.desk-shelf { position: absolute; left: var(--desk-shelf-left); bottom: var(--desk-shelf-bottom); width: var(--desk-shelf-width); height: auto; opacity: 0; transform: translateY(35%); }
 .scene-object { position: absolute; display: block; padding: 0; border: 0; background: transparent; cursor: pointer; pointer-events: none; opacity: 0; }
 .world.is-complete .scene-object { pointer-events: auto; }
 .scene-object:focus-visible { outline: 1px solid rgba(197,223,218,.8); outline-offset: 4px; }
-.book-object { left: 39%; top: 63%; width: 18%; transform: translateY(-180%) rotate(-9deg); }
+.book-object { left: var(--book-left); top: var(--book-top); width: var(--book-width); transform: translateY(-180%) rotate(-9deg); }
 .book-object > img:first-child { width: 100%; height: auto; }
-.book-object .pen { position: absolute; width: 38%; height: auto; left: 42%; top: -5%; transform: rotate(-5deg); }
-.lamp-object { left: 12%; top: 48%; width: 19%; aspect-ratio: 318 / 352; transform: translateX(-110%); }
+.book-object .pen { position: absolute; width: var(--pen-width); height: auto; left: var(--pen-left); top: var(--pen-top); transform: rotate(-5deg); }
+.lamp-object { left: var(--lamp-left); top: var(--lamp-top); width: var(--lamp-width); aspect-ratio: 318 / 352; transform: translateX(-110%); }
 .lamp-stack, .joystick-stack { position: absolute; inset: 0; display: block; }
 .lamp-stack img, .joystick-stack img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
 .lamp-stack img:nth-child(2) { transform-origin: 29% 55%; }
@@ -80,7 +110,7 @@ body { background: var(--background); color: var(--cyan); font-family: "Trebuche
 .lamp-object:hover .lamp-stack img:nth-child(3), .lamp-object:focus-visible .lamp-stack img:nth-child(3) { transform: rotate(10deg) translate(2px,-2px); }
 .lamp-object:hover .lamp-stack img:nth-child(4), .lamp-object:focus-visible .lamp-stack img:nth-child(4) { transform: rotate(-13deg) translate(3px,-3px); }
 .lamp-stack img { transition: transform 450ms cubic-bezier(.2,.8,.2,1); }
-.joystick-object { right: 12%; top: 57%; width: 20%; aspect-ratio: 1 / 1; transform: translate(110%,12%); }
+.joystick-object { right: var(--joystick-right); top: var(--joystick-top); width: var(--joystick-width); aspect-ratio: 1 / 1; transform: translate(110%,12%); }
 .joystick-stack img { transition: transform 350ms ease; }
 .joystick-object:hover .joystick-part-one, .joystick-object:focus-visible .joystick-part-one { transform: translate(-4px,-3px) rotate(-2deg); }
 .joystick-object:hover .joystick-part-two, .joystick-object:focus-visible .joystick-part-two { transform: translate(3px,-2px) rotate(2deg); }
@@ -122,20 +152,10 @@ body { background: var(--background); color: var(--cyan); font-family: "Trebuche
 @keyframes lamp-slide { to { opacity: 1; transform: translateX(0); } }
 @keyframes stick-arrive { to { opacity: 1; transform: translate(0,0); } }
 
+/* Small screens use the SAME scene positions; no duplicate overrides. */
 @media (max-width: 700px) {
   #website { padding: 22px 14px 12px; gap: 12px; }
-  .game-screen { width: min(100%, calc((100dvh - 145px) * 1.7778)); aspect-ratio: 16 / 9; }
-  .board-assembly { top: 4%; left: 10%; width: 80%; }
-  .board-name { top: 2%; left: 37%; width: 29%; }
-  .board-shelf-left { width: 20%; }
-  .board-shelf-right { width: 26%; }
-  .tool-line { left: 22%; top: 26%; width: 58%; height: 70%; }
-  .desktop { bottom: 22%; left: 4%; width: 92%; }
-  .drawers { width: 90%; left: 5%; bottom: 1%; }
-  .desk-shelf { left: 35%; width: 30%; }
-  .book-object { left: 39%; top: 63%; width: 18%; }
-  .lamp-object { left: 12%; top: 48%; width: 19%; }
-  .joystick-object { right: 12%; top: 57%; width: 20%; }
+  .game-screen { width: min(100%, calc((100dvh - 145px) * 1.7778)); }
   .hover-text { bottom: 3%; }
 }
 @media (max-height: 620px) and (min-width: 701px) {
