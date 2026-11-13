@@ -19,10 +19,15 @@ document.addEventListener("DOMContentLoaded", () => {
             world.classList.add("is-opening");
         }, 350);
 
-        // Mark the scene ready once the entrance animation has settled.
+        // Let the green doors finish opening before the workspace assembles.
+        window.setTimeout(() => {
+            world.classList.add("is-assembling");
+        }, 2050);
+
+        // Mark the scene ready once the objects have settled.
         window.setTimeout(() => {
             world.classList.add("is-ready");
-        }, 3100);
+        }, 4700);
     });
 
     // Only objects with data-hover-text display a caption.
