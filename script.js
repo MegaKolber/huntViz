@@ -2,11 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const exploreButton = document.getElementById("exploreButton");
     const intro = document.getElementById("intro");
     const world = document.getElementById("world");
-    const detailPanel = document.getElementById("detailPanel");
-    const detailTitle = document.getElementById("detailTitle");
-    const detailDescription = document.getElementById("detailDescription");
-    const detailClose = document.getElementById("detailClose");
-    const sceneObjects = document.querySelectorAll(".scene-object");
+    const hoverText = document.getElementById("hoverText");
+    const hoverObjects = document.querySelectorAll("[data-hover-text]");
 
     let hasEntered = false;
 
@@ -17,32 +14,32 @@ document.addEventListener("DOMContentLoaded", () => {
         intro.classList.add("is-leaving");
         world.classList.add("is-visible");
 
-        // Let the empty screen fade before the room begins to open.
+        // Fade the invitation, then open the two wall panels.
         window.setTimeout(() => {
             world.classList.add("is-opening");
         }, 350);
 
-        // The scene is ready after the wall and objects have finished moving.
+        // Mark the scene ready once the entrance animation has settled.
         window.setTimeout(() => {
             world.classList.add("is-ready");
         }, 3100);
     });
 
-    sceneObjects.forEach((object) => {
-        object.addEventListener("click", () => {
-            detailTitle.textContent = object.dataset.title;
-            detailDescription.textContent = object.dataset.description;
-            detailPanel.hidden = false;
-        });
-    });
+    // Only objects with data-hover-text display a caption.
+    // The caption appears in the game's bottom text area, never on the object.
+    hoverObjects.forEach((object) => {
+        const showCaption = () => {
+            hoverText.textContent = object.dataset.hoverText;
+            hoverText.classList.add("is-visible");
+        };
 
-    detailClose.addEventListener("click", () => {
-        detailPanel.hidden = true;
-    });
+        const hideCaption = () => {
+            hoverText.classList.remove("is-visible");
+        };
 
-    document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") {
-            detailPanel.hidden = true;
-        }
+        object.addEventListener("mouseenter", showCaption);
+        object.addEventListener("mouseleave", hideCaption);
+        object.addEventListener("focus", showCaption);
+        object.addEventListener("blur", hideCaption);
     });
 });
