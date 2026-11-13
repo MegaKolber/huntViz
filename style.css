@@ -1,4 +1,4 @@
-/* HUNT YOUR VIZION — visual foundation */
+/* HUNT YOUR VIZION — responsive scene foundation */
 :root {
     color-scheme: dark;
     --background: #101a1c;
@@ -6,8 +6,6 @@
     --cyan: #c5dfda;
     --cyan-muted: #91b2ad;
     --line: rgba(197, 223, 218, 0.34);
-    --wood: #6e6250;
-    --wood-light: #98866a;
 }
 
 * {
@@ -16,25 +14,29 @@
     padding: 0;
 }
 
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
 body {
-    min-height: 100vh;
-    background:
-        radial-gradient(ellipse at 50% 38%, rgba(48, 76, 75, 0.2), transparent 58%),
-        var(--background);
+    background: var(--background);
     color: var(--cyan);
     font-family: "Trebuchet MS", Arial, sans-serif;
 }
 
 #website {
-    width: min(100%, 1500px);
-    min-height: 100vh;
-    margin: 0 auto;
-    padding: clamp(26px, 5vh, 54px) clamp(18px, 4vw, 64px) 22px;
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    height: 100dvh;
+    padding: clamp(16px, 3.5vh, 38px) clamp(16px, 4vw, 64px) 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 28px;
+    gap: clamp(12px, 2.5vh, 26px);
 }
 
 .site-header {
@@ -44,16 +46,16 @@ body {
 
 .site-header h1 {
     color: var(--cyan);
-    font-size: clamp(1.55rem, 3.5vw, 2.65rem);
+    font-size: clamp(1.45rem, 3.5vw, 2.65rem);
     font-weight: 500;
-    letter-spacing: clamp(0.18rem, 0.75vw, 0.48rem);
+    letter-spacing: clamp(0.16rem, 0.75vw, 0.48rem);
     line-height: 1.2;
 }
 
 .site-header p {
-    margin-top: 11px;
+    margin-top: 9px;
     color: var(--cyan-muted);
-    font-size: clamp(0.78rem, 1.4vw, 0.98rem);
+    font-size: clamp(0.72rem, 1.4vw, 0.98rem);
     letter-spacing: 0.12em;
     font-weight: 400;
 }
@@ -66,13 +68,14 @@ body {
 .game-screen {
     position: relative;
     isolation: isolate;
-    width: min(100%, 1120px);
+    flex: 0 1 auto;
+    width: min(100%, 1120px, calc((100dvh - 170px) * 1.7778));
     aspect-ratio: 16 / 9;
-    min-height: 430px;
+    min-height: 0;
     overflow: hidden;
     background: var(--screen);
     border: 1px solid rgba(197, 223, 218, 0.09);
-    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28), 0 0 50px rgba(100, 150, 145, 0.035);
+    box-shadow: 0 14px 45px rgba(0, 0, 0, 0.16);
 }
 
 .intro {
@@ -81,7 +84,7 @@ body {
     inset: 0;
     display: grid;
     place-items: center;
-    background: #030607;
+    background: var(--screen);
     opacity: 1;
     transition: opacity 900ms ease, visibility 900ms ease;
 }
@@ -98,7 +101,7 @@ body {
     font: inherit;
     cursor: pointer;
     letter-spacing: 0.24em;
-    transition: background 250ms ease, border-color 250ms ease, transform 250ms ease, opacity 700ms ease;
+    transition: background 250ms ease, border-color 250ms ease, transform 250ms ease;
 }
 
 .explore-button span:first-child {
@@ -130,7 +133,7 @@ body {
     inset: 0;
     overflow: hidden;
     opacity: 0;
-    background: #101719;
+    background: var(--background);
     transition: opacity 700ms ease 250ms;
 }
 
@@ -140,18 +143,9 @@ body {
 
 .wall {
     position: absolute;
-    inset: 0 0 24% 0;
-    overflow: hidden;
-    background: linear-gradient(145deg, #263332, #182322 60%, #111a19);
-}
-
-.wall::after {
-    content: "";
-    position: absolute;
     inset: 0;
-    opacity: 0.22;
-    background-image: repeating-linear-gradient(0deg, transparent 0 5px, rgba(220, 235, 225, 0.025) 6px);
-    pointer-events: none;
+    overflow: hidden;
+    background: var(--background);
 }
 
 .wall-panel {
@@ -160,8 +154,7 @@ body {
     top: 0;
     bottom: 0;
     width: 50.5%;
-    background: linear-gradient(110deg, #293635, #1c2928);
-    box-shadow: inset 0 0 35px rgba(0, 0, 0, 0.24);
+    background: #1a2929;
     transition: transform 1500ms cubic-bezier(0.72, 0, 0.25, 1);
 }
 
@@ -197,25 +190,14 @@ body {
     font: inherit;
     cursor: pointer;
     opacity: 0;
-    transition: filter 220ms ease, outline-color 220ms ease;
+    background: transparent;
+    transition: filter 220ms ease;
 }
 
 .scene-object:hover,
 .scene-object:focus-visible {
-    filter: brightness(1.25);
-    outline: 1px solid rgba(197, 223, 218, 0.5);
-    outline-offset: 5px;
-}
-
-.object-label {
-    position: absolute;
-    left: 50%;
-    bottom: -25px;
-    transform: translateX(-50%);
-    color: rgba(197, 223, 218, 0.78);
-    font-size: clamp(0.52rem, 0.8vw, 0.68rem);
-    letter-spacing: 0.14em;
-    white-space: nowrap;
+    filter: brightness(1.15);
+    outline: none;
 }
 
 .bulletin-board {
@@ -225,7 +207,6 @@ body {
     height: 30%;
     background: #746c5d;
     border: 7px solid #4b4a40;
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
     transform: translateX(-120%);
 }
 
@@ -245,7 +226,6 @@ body {
     height: 9%;
     background: #273c3c;
     border: 2px solid #6f8a82;
-    box-shadow: 4px 5px 0 #172423, 7px 9px 13px rgba(0, 0, 0, 0.3);
     transform: translateY(-180px) rotate(-12deg);
 }
 
@@ -272,7 +252,6 @@ body {
     height: 37%;
     background: #9a9078;
     clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%);
-    box-shadow: 0 0 35px rgba(207, 190, 145, 0.1);
 }
 
 .lamp-stem {
@@ -300,9 +279,8 @@ body {
     bottom: 10%;
     width: 68%;
     height: 15%;
-    background: linear-gradient(#88765d, #655744);
+    background: #78684f;
     border: 2px solid #4a4033;
-    box-shadow: 0 18px 25px rgba(0, 0, 0, 0.4);
     transform: translateY(180px);
 }
 
@@ -314,7 +292,6 @@ body {
     height: 9px;
     border-radius: 8px;
     background: #282b28;
-    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.2);
 }
 
 .desk-top {
@@ -324,9 +301,8 @@ body {
     right: 9%;
     bottom: 24%;
     height: 4%;
-    background: linear-gradient(#b09a75, #78684f);
+    background: #98866a;
     border: 1px solid #4d4436;
-    box-shadow: 0 9px 18px rgba(0, 0, 0, 0.32);
     transform: translateY(-220px);
 }
 
@@ -362,58 +338,32 @@ body {
     opacity: 1;
 }
 
-.detail-panel {
+.hover-text {
     position: absolute;
     z-index: 8;
-    right: 3%;
-    bottom: 4%;
-    width: min(310px, 42%);
-    padding: 22px 22px 19px;
+    left: 50%;
+    bottom: 3.5%;
+    width: min(80%, 520px);
+    min-height: 1.5em;
+    transform: translateX(-50%);
     color: var(--cyan);
-    background: rgba(5, 10, 10, 0.94);
-    border: 1px solid rgba(197, 223, 218, 0.28);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+    font-size: clamp(0.72rem, 1.35vw, 0.95rem);
+    letter-spacing: 0.2em;
+    text-align: center;
+    text-shadow: 0 1px 5px #000;
+    opacity: 0;
+    transition: opacity 180ms ease;
+    pointer-events: none;
 }
 
-.detail-panel[hidden] {
-    display: none;
-}
-
-.detail-panel h2 {
-    margin-bottom: 9px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-}
-
-.detail-panel p {
-    color: #a7bdb8;
-    font-size: 0.85rem;
-    line-height: 1.55;
-}
-
-.detail-coming-soon {
-    display: block;
-    margin-top: 16px;
-    color: #718c88;
-    font-size: 0.55rem;
-    letter-spacing: 0.13em;
-}
-
-.detail-close {
-    position: absolute;
-    top: 8px;
-    right: 10px;
-    border: 0;
-    background: transparent;
-    color: var(--cyan-muted);
-    font-size: 1.3rem;
-    cursor: pointer;
+.hover-text.is-visible {
+    opacity: 1;
 }
 
 .site-footer {
+    flex: 0 0 auto;
     color: rgba(145, 178, 173, 0.55);
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     letter-spacing: 0.08em;
 }
 
@@ -443,14 +393,13 @@ body {
 
 @media (max-width: 700px) {
     #website {
-        justify-content: flex-start;
-        padding-top: 34px;
-        gap: 28px;
+        padding: 22px 14px 12px;
+        gap: 12px;
     }
 
     .game-screen {
+        width: min(100%, calc((100dvh - 145px) * 0.8));
         aspect-ratio: 4 / 5;
-        min-height: 500px;
     }
 
     .bulletin-board {
@@ -485,15 +434,28 @@ body {
         bottom: 26%;
     }
 
-    .detail-panel {
-        right: 4%;
+    .hover-text {
         bottom: 3%;
-        width: 62%;
-        padding: 18px;
+    }
+}
+
+@media (max-height: 620px) and (min-width: 701px) {
+    #website {
+        padding-top: 12px;
+        padding-bottom: 10px;
+        gap: 10px;
     }
 
-    .object-label {
-        font-size: 0.5rem;
+    .game-screen {
+        width: min(100%, calc((100dvh - 120px) * 1.7778));
+    }
+
+    .site-header h1 {
+        font-size: clamp(1.25rem, 3vh, 2rem);
+    }
+
+    .site-header p {
+        margin-top: 5px;
     }
 }
 
