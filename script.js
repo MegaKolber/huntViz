@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Doors open first. The desk and board do not begin assembling until they clear.
     window.setTimeout(() => world.classList.add("is-opening"), 350);
-    window.setTimeout(() => world.classList.add("is-assembling"), 1950);
-    window.setTimeout(() => world.classList.add("is-complete"), 5900);
+    window.setTimeout(() => world.classList.add("is-assembling"), 2050);
+    window.setTimeout(() => world.classList.add("is-complete"), 9500);
   });
 
   hoverObjects.forEach((object) => {
