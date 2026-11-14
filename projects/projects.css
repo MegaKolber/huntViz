@@ -1,0 +1,20 @@
+/* Early functional collection layout. Visual design can change later. */
+html, body { height: auto; min-height: 100%; overflow: auto; }
+.collection-page { max-width: 1120px; margin: 0 auto; padding: clamp(20px,4vw,60px); }
+.collection-header { display: grid; gap: 20px; margin-bottom: 42px; }
+.collection-header > a { color: var(--cyan-muted); text-decoration: none; font-size: .85rem; letter-spacing: .12em; }
+.collection-header h1 { font-weight: 500; letter-spacing: .16em; font-size: clamp(1.6rem,4vw,2.6rem); }
+.collection-header nav { display: flex; flex-wrap: wrap; gap: 10px 24px; }
+.collection-header nav a { color: var(--cyan); text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 5px; }
+.collection-header nav a[aria-current="page"], .collection-header nav a:hover { border-color: var(--cyan); }
+.project-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(min(100%,250px),1fr)); gap: 26px; }
+.project-card { display: block; color: inherit; text-decoration: none; }
+.project-card img, .project-placeholder { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: #1a2929; }
+.project-card h2 { font-size: 1.1rem; font-weight: 500; margin-top: 12px; }
+.project-card p, .project-year { color: var(--cyan-muted); font-size: .84rem; margin-top: 6px; }
+.project-detail { max-width: 850px; }
+.project-detail h2 { font-size: clamp(1.6rem,4vw,2.7rem); font-weight: 500; margin-bottom: 10px; }
+.project-description { white-space: pre-wrap; line-height: 1.65; margin: 25px 0; }
+.project-media { display: grid; gap: 22px; }
+.project-media img, .project-media video { display: block; max-width: 100%; max-height: 75vh; object-fit: contain; background: #030607; }
+.back-link { display: inline-block; margin-bottom: 25px; color: var(--cyan-muted); }
