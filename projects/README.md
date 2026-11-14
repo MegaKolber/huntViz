@@ -1,7 +1,7 @@
 # Adding a project
 
-1. Open the `projects` folder, then choose `films`, `fabs`, or `interacts`.
-2. Create a new folder for your project, for example `ice-cream-prop`.
+1. Open the `projects` folder, then choose `films`, `fabrications`, or `interacts`.
+2. Create a new folder for your project, for example `ice_cream`.
 3. Add an `info.md` file using the example below, plus your images and videos.
 4. Commit and push from VS Code. GitHub automatically updates `projects.json`.
 
