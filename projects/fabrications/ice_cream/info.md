@@ -3,7 +3,7 @@
 title: Ice Cream Prop
 year: 2026
 category: fabrications
-cover: cover.jpg
+cover: cover.png
 ---
 
 Props made for an independent short film combining live-action footage with an animated character. Used lightweight spackling, flour, and paint for the ice cream and sealed real cones with Mod Podge.
