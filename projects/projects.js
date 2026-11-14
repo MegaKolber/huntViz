@@ -4,7 +4,7 @@ const title = document.getElementById("pageTitle");
 const params = new URLSearchParams(location.search);
 const category = params.get("category") || "";
 const projectId = params.get("project");
-const categoryNames = {films: "Films", fabs: "Fabrications", interacts: "Interactives"};
+const categoryNames = {films: "Films", fabrications: "Fabrications", interacts: "Interactives"};
 
 function element(tag, className, text) {
   const node = document.createElement(tag);
