@@ -2,7 +2,6 @@
 ---
 title: Ice Cream Prop
 year: 2026
-category: fabrications
 cover: cover.png
 ---
 
