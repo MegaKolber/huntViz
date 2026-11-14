@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "id": "fabrications/ice_cream",
+    "category": "fabrications",
+    "title": "Ice Cream Prop",
+    "year": "2026",
+    "cover": "projects/fabrications/ice_cream/cover.png",
+    "description": "Props made for an independent short film combining live-action footage with an animated character. Used lightweight spackling, flour, and paint for the ice cream and sealed real cones with Mod Podge.\n\nOne cone was specially built with an internal wire and PVC connection, allowing it to be suspended and manipulated during filming while giving the VFX team a practical object to integrate with the animated character.",
+    "media": [
+      {
+        "src": "projects/fabrications/ice_cream/Screenshot_20260411_171415_Chrome (1).jpg",
+        "type": "image"
+      },
+      {
+        "src": "projects/fabrications/ice_cream/cover.png",
+        "type": "image"
+      }
+    ]
+  }
+]
