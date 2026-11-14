@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-CATEGORIES = ("films", "fabs", "interacts")
+CATEGORIES = ("films", "fabrications", "interacts")
 IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".webp", ".gif", ".avif"}
 VIDEO_EXTS = {".mp4", ".webm"}
 MEDIA_EXTS = IMAGE_EXTS | VIDEO_EXTS
