@@ -36,10 +36,10 @@
             <img class="board-name board-detail" src="assets/name.png" alt="">
             <img class="board-shelf board-shelf-left board-detail" src="assets/shelfLeft02.png" alt="">
             <img class="board-shelf board-shelf-right board-detail" src="assets/shekfEmpR.png" alt="">
-            <img class="board-plant board-detail" src="assets/plantR.png" alt="">
-            <button class="camera-object board-detail" data-hover-text="CAMERA" type="button" aria-label="Camera — hover to see its alternate state"><img class="camera-start" src="assets/cameraStart02.png" alt=""><img class="camera-end" src="assets/CameraEnd02.png" alt=""></button>
-            <img class="board-business-card board-detail" src="assets/bc.png" alt="">
-            <div class="tool-line board-detail" aria-hidden="true">
+            <button class="board-plant board-detail plant-object" type="button" data-hover-text="A LITTLE DESK COMPANION" aria-label="Make the plant dance"><img src="assets/plantR.png" alt=""></button>
+            <a class="camera-object board-detail" data-hover-text="FILMS" href="projects/?category=films" aria-label="View films"><img class="camera-start" src="assets/cameraStart02.png" alt=""><img class="camera-end" src="assets/CameraEnd02.png" alt=""></a>
+            <a class="board-business-card board-detail card-object" href="contact/" data-hover-text="CONTACT" aria-label="Contact"><img src="assets/bc.png" alt=""></a>
+            <a class="tool-line board-detail" href="projects/?category=fabrications" data-hover-text="FABRICATIONS" aria-label="View fabrications">
               <img src="assets/t1.png" alt="">
               <img src="assets/t2.png" alt="">
               <img src="assets/t3.png" alt="">
@@ -48,7 +48,7 @@
               <img src="assets/t91.png" alt="">
               <img src="assets/t92.png" alt="">
               <img src="assets/t93.png" alt="">
-            </div>
+            </a>
           </div>
 
           <div class="desk-assembly" id="deskAssembly">
@@ -56,13 +56,13 @@
             <img class="desktop" src="assets/desktop.png" alt="">
             <img class="desk-shelf" src="assets/shelf02.png" alt="">
 
-            <button class="scene-object book-object" data-hover-text="INTERACTIVES" type="button" aria-label="Interactive projects">
+            <a class="scene-object book-object" data-hover-text="ABOUT" href="about/" aria-label="About me">
               <img src="assets/book.png" alt="">
               <img class="pen" src="assets/pen.png" alt="">
-            </button>
+            </a>
 
             <!-- All lamp layers share one canvas and one parent. They never enter separately. -->
-            <button class="scene-object lamp-object" data-hover-text="A LITTLE MORE THAN A LAMP" type="button" aria-label="Lamp — hover to see how it is built">
+            <button class="scene-object lamp-object" data-hover-text="CLICK TO SWITCH THE LIGHT" type="button" aria-label="Toggle lamp light" aria-pressed="false">
               <span class="lamp-stack">
                 <img src="assets/lamp1.png" alt="">
                 <img src="assets/lamp2.png" alt="">
@@ -72,7 +72,7 @@
             </button>
 
             <!-- The joystick pieces stay locked together; hover shifts the assembled layers. -->
-            <button class="scene-object joystick-object" data-hover-text="FABRICATIONS" type="button" aria-label="Joystick — hover to see how it is built">
+            <a class="scene-object joystick-object" data-hover-text="INTERACTIVES" href="projects/?category=interacts" aria-label="View interactives">
               <span class="joystick-stack">
                 <img class="joystick-base" src="assets/stickBase2.png" alt="">
                 <img class="joystick-part joystick-part-one" src="assets/stick1.png" alt="">
@@ -80,7 +80,7 @@
                 <img class="joystick-part joystick-part-three" src="assets/stick3.png" alt="">
                 <img class="joystick-top" src="assets/stick.png" alt="">
               </span>
-            </button>
+            </a>
           </div>
         </div>
 
