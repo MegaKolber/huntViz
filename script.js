@@ -17,6 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
     window.setTimeout(() => world.classList.add("is-complete"), 9500);
   });
 
+  const lamp = document.querySelector(".lamp-object");
+  const plant = document.querySelector(".plant-object");
+  lamp?.addEventListener("click", () => {
+    const lit = lamp.classList.toggle("is-lit");
+    lamp.setAttribute("aria-pressed", String(lit));
+  });
+  plant?.addEventListener("click", () => plant.classList.toggle("is-dancing"));
+
   hoverObjects.forEach((object) => {
     const showCaption = () => {
       hoverText.textContent = object.dataset.hoverText;
