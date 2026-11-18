@@ -125,22 +125,40 @@ body { background: var(--background); color: var(--cyan); font-family: "Trebuche
 .hover-text.is-visible { opacity: 1; }
 .site-footer { flex: 0 0 auto; color: rgba(145,178,173,.55); font-size: .68rem; letter-spacing: .08em; }
 
-/* Assembly choreography: each board detail waits for the empty board to land. */
-.world.is-assembling .board-assembly { animation: board-arrives 950ms cubic-bezier(.2,.75,.25,1) forwards; }
-.world.is-assembling .board-name { animation: detail-drop 550ms ease 1.15s forwards; }
-.world.is-assembling .board-shelf-left { animation: detail-left 650ms cubic-bezier(.2,.75,.25,1) 1.65s forwards; }
-.world.is-assembling .board-shelf-right { animation: detail-right 650ms cubic-bezier(.2,.75,.25,1) 1.95s forwards; }
-.world.is-assembling .board-business-card { animation: detail-drop 550ms ease 2.25s forwards; }
-.world.is-assembling .board-plant { animation: detail-drop 550ms ease 2.5s forwards; }
-.world.is-assembling .camera-object { animation: detail-drop 550ms ease 2.75s forwards; }
-.world.is-assembling .tool-line { animation: detail-drop 650ms ease 3s forwards; }
+/* ENTRANCE TIMING CONTROLS: all values in milliseconds. */
+:root {
+ --doors-delay: 350ms; --doors-duration: 1500ms; --assembly-delay: 2050ms;
+ --enter-board-assembly-delay: 0ms; --enter-board-assembly-duration: 950ms;
+ --enter-board-name-delay: 1150ms; --enter-board-name-duration: 550ms;
+ --enter-board-shelf-left-delay: 1650ms; --enter-board-shelf-left-duration: 650ms;
+ --enter-board-shelf-right-delay: 1950ms; --enter-board-shelf-right-duration: 650ms;
+ --enter-board-business-card-delay: 2250ms; --enter-board-business-card-duration: 550ms;
+ --enter-board-plant-delay: 2500ms; --enter-board-plant-duration: 550ms;
+ --enter-camera-object-delay: 2750ms; --enter-camera-object-duration: 550ms;
+ --enter-tool-line-delay: 3000ms; --enter-tool-line-duration: 650ms;
+ --enter-drawers-delay: 3900ms; --enter-drawers-duration: 850ms;
+ --enter-desktop-delay: 4800ms; --enter-desktop-duration: 750ms;
+ --enter-desk-shelf-delay: 5350ms; --enter-desk-shelf-duration: 550ms;
+ --enter-book-object-delay: 5550ms; --enter-book-object-duration: 750ms;
+ --enter-lamp-object-delay: 5900ms; --enter-lamp-object-duration: 850ms;
+ --enter-joystick-object-delay: 6250ms; --enter-joystick-object-duration: 850ms;
+}
+.wall-panel { transition-duration: var(--doors-duration); }
 .world.is-assembling .desk-assembly { opacity: 1; }
-.world.is-assembling .drawers { animation: drawer-rise 850ms cubic-bezier(.2,.8,.2,1) 3.9s forwards; }
-.world.is-assembling .desktop { animation: desktop-drop 750ms cubic-bezier(.2,.8,.2,1) 4.8s forwards; }
-.world.is-assembling .desk-shelf { animation: detail-drop 550ms ease 5.35s forwards; }
-.world.is-assembling .book-object { animation: book-drop 750ms cubic-bezier(.2,.8,.2,1) 5.55s forwards; }
-.world.is-assembling .lamp-object { animation: lamp-slide 850ms cubic-bezier(.2,.75,.25,1) 5.9s forwards; }
-.world.is-assembling .joystick-object { animation: stick-arrive 850ms cubic-bezier(.2,.75,.25,1) 6.25s forwards; }
+.world.is-assembling .board-assembly { animation: board-arrives var(--enter-board-assembly-duration) cubic-bezier(.2,.75,.25,1) var(--enter-board-assembly-delay) forwards; }
+.world.is-assembling .board-name { animation: detail-drop var(--enter-board-name-duration) cubic-bezier(.2,.75,.25,1) var(--enter-board-name-delay) forwards; }
+.world.is-assembling .board-shelf-left { animation: detail-left var(--enter-board-shelf-left-duration) cubic-bezier(.2,.75,.25,1) var(--enter-board-shelf-left-delay) forwards; }
+.world.is-assembling .board-shelf-right { animation: detail-right var(--enter-board-shelf-right-duration) cubic-bezier(.2,.75,.25,1) var(--enter-board-shelf-right-delay) forwards; }
+.world.is-assembling .board-business-card { animation: detail-drop var(--enter-board-business-card-duration) cubic-bezier(.2,.75,.25,1) var(--enter-board-business-card-delay) forwards; }
+.world.is-assembling .board-plant { animation: detail-drop var(--enter-board-plant-duration) cubic-bezier(.2,.75,.25,1) var(--enter-board-plant-delay) forwards; }
+.world.is-assembling .camera-object { animation: detail-drop var(--enter-camera-object-duration) cubic-bezier(.2,.75,.25,1) var(--enter-camera-object-delay) forwards; }
+.world.is-assembling .tool-line { animation: detail-drop var(--enter-tool-line-duration) cubic-bezier(.2,.75,.25,1) var(--enter-tool-line-delay) forwards; }
+.world.is-assembling .drawers { animation: drawer-rise var(--enter-drawers-duration) cubic-bezier(.2,.75,.25,1) var(--enter-drawers-delay) forwards; }
+.world.is-assembling .desktop { animation: desktop-drop var(--enter-desktop-duration) cubic-bezier(.2,.75,.25,1) var(--enter-desktop-delay) forwards; }
+.world.is-assembling .desk-shelf { animation: detail-drop var(--enter-desk-shelf-duration) cubic-bezier(.2,.75,.25,1) var(--enter-desk-shelf-delay) forwards; }
+.world.is-assembling .book-object { animation: book-drop var(--enter-book-object-duration) cubic-bezier(.2,.75,.25,1) var(--enter-book-object-delay) forwards; }
+.world.is-assembling .lamp-object { animation: lamp-slide var(--enter-lamp-object-duration) cubic-bezier(.2,.75,.25,1) var(--enter-lamp-object-delay) forwards; }
+.world.is-assembling .joystick-object { animation: stick-arrive var(--enter-joystick-object-duration) cubic-bezier(.2,.75,.25,1) var(--enter-joystick-object-delay) forwards; }
 
 @keyframes board-arrives { to { opacity: 1; transform: translateX(0); } }
 @keyframes detail-drop { to { opacity: 1; transform: translate(0,0) rotate(0); } }
@@ -202,16 +220,6 @@ body { background: var(--background); color: var(--cyan); font-family: "Trebuche
 @keyframes plant-squish { 0%,100% { transform: scale(1,1) rotate(0); } 25% { transform: scale(1.12,.83) rotate(-5deg); } 50% { transform: scale(.89,1.13) rotate(5deg); } 75% { transform: scale(1.08,.91) rotate(-3deg); } }
 .book-object:hover .pen, .book-object:focus-visible .pen { animation: pen-dance 850ms ease-in-out infinite; transform-origin: 25% 85%; }
 @keyframes pen-dance { 0%,100% { transform: translate(0,0) rotate(-5deg); } 25% { transform: translate(2%,-12%) rotate(-18deg); } 55% { transform: translate(10%,-4%) rotate(13deg); } 80% { transform: translate(-4%,-8%) rotate(-12deg); } }
-/* Each tool PNG retains its shared canvas alignment. */
-.tool-line img { transition: transform 550ms cubic-bezier(.2,.75,.25,1); transform-origin: 50% 25%; }
-.tool-line:hover img:nth-child(1), .tool-line:focus-visible img:nth-child(1) { transform: rotate(var(--tool-1-turn)); }
-.tool-line:hover img:nth-child(2), .tool-line:focus-visible img:nth-child(2) { transform: rotate(var(--tool-2-turn)); }
-.tool-line:hover img:nth-child(3), .tool-line:focus-visible img:nth-child(3) { transform: rotate(var(--tool-3-turn)); }
-.tool-line:hover img:nth-child(4), .tool-line:focus-visible img:nth-child(4) { transform: rotate(var(--tool-4-turn)); }
-.tool-line:hover img:nth-child(5), .tool-line:focus-visible img:nth-child(5) { transform: rotate(var(--tool-5-turn)); }
-.tool-line:hover img:nth-child(6), .tool-line:focus-visible img:nth-child(6) { transform: rotate(var(--tool-6-turn)); }
-.tool-line:hover img:nth-child(7), .tool-line:focus-visible img:nth-child(7) { transform: rotate(var(--tool-7-turn)); }
-.tool-line:hover img:nth-child(8), .tool-line:focus-visible img:nth-child(8) { transform: rotate(var(--tool-8-turn)); }
 /* Lamp: pivot points can be changed without editing the hover rules. */
 .lamp-stack img:nth-child(2) { transform-origin: var(--lamp-2-pivot-x) var(--lamp-2-pivot-y); }
 .lamp-stack img:nth-child(3) { transform-origin: var(--lamp-3-pivot-x) var(--lamp-3-pivot-y); }
@@ -233,3 +241,34 @@ body { background: var(--background); color: var(--cyan); font-family: "Trebuche
   .plant-object.is-dancing img, .book-object:hover .pen,
   .book-object:focus-visible .pen { animation: none; }
 }
+
+/* EIGHT TOOL CONTROLS: offsets, sizes, pivots, and maximum angles. */
+:root {
+ --tool-mouse-radius: .7;
+ --tool-1-left: 0%; --tool-1-top: 0%; --tool-1-width: 100%; --tool-1-height: 100%;
+ --tool-1-pivot-x: 50%; --tool-1-pivot-y: 20%; --tool-1-turn: -13deg;
+ --tool-2-left: 0%; --tool-2-top: 0%; --tool-2-width: 100%; --tool-2-height: 100%;
+ --tool-2-pivot-x: 50%; --tool-2-pivot-y: 20%; --tool-2-turn: 10deg;
+ --tool-3-left: 0%; --tool-3-top: 0%; --tool-3-width: 100%; --tool-3-height: 100%;
+ --tool-3-pivot-x: 50%; --tool-3-pivot-y: 20%; --tool-3-turn: -8deg;
+ --tool-4-left: 0%; --tool-4-top: 0%; --tool-4-width: 100%; --tool-4-height: 100%;
+ --tool-4-pivot-x: 50%; --tool-4-pivot-y: 20%; --tool-4-turn: 6deg;
+ --tool-5-left: 0%; --tool-5-top: 0%; --tool-5-width: 100%; --tool-5-height: 100%;
+ --tool-5-pivot-x: 50%; --tool-5-pivot-y: 20%; --tool-5-turn: -5deg;
+ --tool-6-left: 0%; --tool-6-top: 0%; --tool-6-width: 100%; --tool-6-height: 100%;
+ --tool-6-pivot-x: 50%; --tool-6-pivot-y: 20%; --tool-6-turn: 7deg;
+ --tool-7-left: 0%; --tool-7-top: 0%; --tool-7-width: 100%; --tool-7-height: 100%;
+ --tool-7-pivot-x: 50%; --tool-7-pivot-y: 20%; --tool-7-turn: -10deg;
+ --tool-8-left: 0%; --tool-8-top: 0%; --tool-8-width: 100%; --tool-8-height: 100%;
+ --tool-8-pivot-x: 50%; --tool-8-pivot-y: 20%; --tool-8-turn: 13deg;
+}
+.tool-line img { transition: transform 180ms ease-out; }
+.tool-line img:nth-child(1) { left: var(--tool-1-left); top: var(--tool-1-top); width: var(--tool-1-width); height: var(--tool-1-height); transform-origin: var(--tool-1-pivot-x) var(--tool-1-pivot-y); }
+.tool-line img:nth-child(2) { left: var(--tool-2-left); top: var(--tool-2-top); width: var(--tool-2-width); height: var(--tool-2-height); transform-origin: var(--tool-2-pivot-x) var(--tool-2-pivot-y); }
+.tool-line img:nth-child(3) { left: var(--tool-3-left); top: var(--tool-3-top); width: var(--tool-3-width); height: var(--tool-3-height); transform-origin: var(--tool-3-pivot-x) var(--tool-3-pivot-y); }
+.tool-line img:nth-child(4) { left: var(--tool-4-left); top: var(--tool-4-top); width: var(--tool-4-width); height: var(--tool-4-height); transform-origin: var(--tool-4-pivot-x) var(--tool-4-pivot-y); }
+.tool-line img:nth-child(5) { left: var(--tool-5-left); top: var(--tool-5-top); width: var(--tool-5-width); height: var(--tool-5-height); transform-origin: var(--tool-5-pivot-x) var(--tool-5-pivot-y); }
+.tool-line img:nth-child(6) { left: var(--tool-6-left); top: var(--tool-6-top); width: var(--tool-6-width); height: var(--tool-6-height); transform-origin: var(--tool-6-pivot-x) var(--tool-6-pivot-y); }
+.tool-line img:nth-child(7) { left: var(--tool-7-left); top: var(--tool-7-top); width: var(--tool-7-width); height: var(--tool-7-height); transform-origin: var(--tool-7-pivot-x) var(--tool-7-pivot-y); }
+.tool-line img:nth-child(8) { left: var(--tool-8-left); top: var(--tool-8-top); width: var(--tool-8-width); height: var(--tool-8-height); transform-origin: var(--tool-8-pivot-x) var(--tool-8-pivot-y); }
+.tool-line:is(:hover,:focus-visible) img { transform: rotate(var(--live-tool-angle, 0deg)); }
